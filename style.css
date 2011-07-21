@@ -517,7 +517,7 @@ ul.tabs { clear:both; margin:20px; }
 
 .item-list ul { margin:0 0 0.25em 1em; padding:0; }
 
-.item-list ul li { margin:0 0 0 5px; padding:0 0 5px 5px; list-style-image:url("images/list-arrow.png"); }
+.item-list ul li { margin:0 0 0 5px; padding:0 0 5px 5px; }
 
 ol.search-results { padding:0; }
 
