@@ -270,12 +270,12 @@ padding: 20px; overflow:hidden; background:#ffffff; margin:25px 0 0 0; font-styl
 * Main-menu 
 */
 /* 1st Level */
-#header-menu ul.menu  { display:block; padding:0; margin:0;  }
+#header-menu ul.menu  { display:block; padding:0; margin:0; position:relative; z-index:100;  }
 
 #header-menu ul.menu li { display:inline-block; float:left; vertical-align: middle; padding:0; margin:0; }
 
 #header-menu ul.menu li a { outline:none; text-decoration: none; margin:0 35px 0 0; color:#ffffff; font-size:14px; font-weight:normal; text-align:center; text-transform:uppercase; 
-font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; }
+font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; display:block; }
 
 #header-menu ul.menu li a:hover, #header-menu ul.menu li a.active { color:#0099CC; }
 
