@@ -505,7 +505,9 @@ li { display:list-item; }
 
 .pager-current { font-weight:bold; color:#7c713f; }
 
-ul.tabs { clear:both; margin:20px; }
+ul.tabs { clear:both; margin:20px; white-space: normal }
+
+ul.tabs li { padding:10px 0; line-height:130%; }
 
 .links { display: block; text-align:right; }
 
