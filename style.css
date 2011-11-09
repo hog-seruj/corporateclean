@@ -184,7 +184,7 @@ padding: 20px; overflow:hidden; background:#ffffff; margin:0 0 40px 0;
 
 .region-sidebar-first ul.menu {  margin:0; padding:0; }
 
-.region-sidebar-first ul.menu li { list-style:none; margin:0; padding:0; }
+.region-sidebar-first ul.menu li { list-style:none; margin:0; padding:0; list-style-image:none; }
 
 .region-sidebar-first ul.menu li a { border-bottom:1px solid #e7e7e7; display:block; padding:5px; }
 
@@ -270,7 +270,7 @@ padding: 20px; overflow:hidden; background:#ffffff; margin:25px 0 0 0; font-styl
 * Main-menu 
 */
 /* 1st Level */
-#header-menu ul.menu  { display:block; padding:0; margin:0; position:relative; z-index:100;  }
+#header-menu ul.menu  { display:block; padding:0; margin:0; position:relative; z-index:100; }
 
 #header-menu ul.menu li { display:inline-block; float:left; vertical-align: middle; padding:0; margin:0; }
 
@@ -288,7 +288,7 @@ font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica
 /* 2nd Level */
 #header-menu ul.menu li.expanded ul.menu { width: 230px; z-index:100; padding:0; background: #222222; display: none; position: absolute; }
 
-#header-menu ul.menu li.expanded:hover > ul.menu { display: block; }
+#header-menu ul.menu li.expanded:hover, #header-menu ul.menu li.expanded:hover > ul.menu { display:block; }
 
 #header-menu ul.menu li.expanded ul.menu li a { padding:0 10px; margin:0; display:block; width:210px; text-align:left; line-height:35px; height:35px; background:none; font-size:12px; 
 border-bottom:1px solid #353535; }
@@ -309,7 +309,7 @@ border-bottom:1px solid #353535; }
 
 #footer .block ul.menu ul.menu { margin: 0 0 0 15px; }
 
-#footer .block ul.menu li { list-style:none; margin:0; padding:0; }
+#footer .block ul.menu li { list-style:none; margin:0; padding:0; list-style-image:none; }
 
 #footer .block ul.menu li a { border-bottom: 1px solid #353535; display: block; padding:5px; }
 
@@ -550,7 +550,7 @@ filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0093c5', end
 
 #block-search-form input.form-submit { margin:0; border:none; -webkit-box-shadow:none; -moz-box-shadow:none; box-shadow:none; background:none; filter:none; }
 
-ul.inline li { display: inline-block; margin: 0; padding: 10px 5px; }
+ul.inline li { display: inline-block; margin: 0; padding: 10px 5px; zoom: 1; *display: inline; }
 
 input.form-submit { margin:0 10px 0 0; }
 
