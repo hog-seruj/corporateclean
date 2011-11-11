@@ -290,8 +290,7 @@ font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica
 
 #header-menu ul.menu li.expanded:hover, #header-menu ul.menu li.expanded:hover > ul.menu { display:block; }
 
-#header-menu ul.menu li.expanded ul.menu li a { padding:0 10px; margin:0; display:block; width:210px; text-align:left; line-height:35px; height:35px; background:none; font-size:12px; 
-border-bottom:1px solid #353535; }
+#header-menu ul.menu li.expanded ul.menu li a { padding:10px; margin:0; display:block; width:210px; text-align:left; line-height:130%; background:none; font-size:12px; border-bottom:1px solid #353535; }
 
 #header-menu ul.menu li.expanded ul.menu li.expanded { background:transparent url('images/main-menu-arrow.png') no-repeat center right; }
 
