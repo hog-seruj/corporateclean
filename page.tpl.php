@@ -242,4 +242,3 @@
     </div><!-- EOF: #footer-bottom-inside -->
 
 </div><!-- EOF: #footer -->
-
