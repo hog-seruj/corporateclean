@@ -520,7 +520,7 @@ ol.search-results { padding:0; }
 .links ul li a, a.more, #edit-submit, #edit-preview, input.form-submit { color:#fefefe; padding:7px 15px; text-shadow: 0 1px 1px #003547; font-weight:bold; border:none;
 font-family: "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; cursor:pointer;
 /* background */
-background: #0095c7;
+background: #0093c5;
 /* IE10 */ 
 background-image: -ms-linear-gradient(top, #0093c5 0%, #0079a2 100%);
 /* Mozilla Firefox */ 

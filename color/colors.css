@@ -99,7 +99,7 @@ filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#262626', end
 
 .links ul li a, a.more, #edit-submit, #edit-preview, input.form-submit, #comments ul.links li a { color:#fefefe; text-shadow: 0 1px 1px #003547; 
 /* background */
-background: #0095c7;
+background: #0093c5;
 /* IE10 */ 
 background-image: -ms-linear-gradient(top, #0093c5 0%, #0079a2 100%);
 /* Mozilla Firefox */ 
