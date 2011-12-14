@@ -276,7 +276,7 @@ padding: 20px; overflow:hidden; background:#ffffff; margin:25px 0 0 0; font-styl
 #header-menu ul.menu li a { outline:none; text-decoration: none; margin:0 35px 0 0; color:#ffffff; font-size:14px; font-weight:normal; text-align:center; text-transform:uppercase; 
 font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; display:block; }
 
-#header-menu ul.menu li a:hover, #header-menu ul.menu li a.active { color:#0099CC; }
+#header-menu ul.menu li a:hover, #header-menu ul.menu li a.active { color:#1487d4; }
 
 #header-menu ul.menu li a:after { content: none; }
 
