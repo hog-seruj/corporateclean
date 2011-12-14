@@ -87,7 +87,7 @@ filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#2f2f2f', end
 
 #logo img { padding:0; margin:0; display:block; overflow:hidden; }
 
-#banner  { clear:both; border-bottom:1px solid #ffffff; overflow: hidden;
+#banner  { clear:both; border-bottom:1px solid #fcfcfc; overflow: hidden;
 background: #efeeee;
 /* IE10 */ 
 background-image: -ms-linear-gradient(top, #efeeee 0%, #dadada 100%);
@@ -175,7 +175,7 @@ filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#262626', end
 */
 .region-sidebar-first .block .content { border:1px solid #ffffff; 
 -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; 
-padding: 20px; overflow:hidden; background:#ffffff; margin:0 0 40px 0;
+padding: 20px; overflow:hidden; background:#fdfdfd; margin:0 0 40px 0;
  /* shadow */
 -webkit-box-shadow: 0 2px 6px #efefef inset;  -moz-box-shadow:0 2px 6px #efefef inset;  box-shadow:0 2px 6px #efefef inset; }
 
