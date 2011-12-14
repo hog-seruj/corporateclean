@@ -293,7 +293,7 @@ font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica
 
 #header-menu ul.menu li.expanded ul.menu li.expanded { background:transparent url('images/main-menu-arrow.png') no-repeat center right; }
 
-#header-menu ul.menu li ul.menu li a:hover {  background:#1b1b1b; color:#0099CC;  }
+#header-menu ul.menu li ul.menu li a:hover {  background:#1b1b1b; color:#1487d4; }
 
 #header-menu ul.menu li.expanded ul.menu li.expanded a:hover { background:#1b1b1b url('images/main-menu-arrow.png') no-repeat center right; }
 
@@ -369,7 +369,7 @@ background:transparent url('images/comments.png') no-repeat center left; padding
 
 #comments ul.links { display:block; }
 
-#comments ul.links li a { color:#ffffff; padding:5px 10px; margin:0 0 0 2px; text-shadow: 0 1px 1px #003547; font-weight:bold; border:none;
+#comments ul.links li a { color:#fefefe; padding:5px 10px; margin:0 0 0 2px; text-shadow: 0 1px 1px #003547; font-weight:bold; border:none;
 font-family: "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; cursor:pointer;
 /* background */
 background: #0093c5;
@@ -517,7 +517,7 @@ ul.tabs li { padding:10px 0; line-height:130%; }
 
 ol.search-results { padding:0; }
 
-.links ul li a, a.more, #edit-submit, #edit-preview, input.form-submit { color:#ffffff; padding:7px 15px; text-shadow: 0 1px 1px #003547; font-weight:bold; border:none;
+.links ul li a, a.more, #edit-submit, #edit-preview, input.form-submit { color:#fefefe; padding:7px 15px; text-shadow: 0 1px 1px #003547; font-weight:bold; border:none;
 font-family: "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; cursor:pointer;
 /* background */
 background: #0095c7;
