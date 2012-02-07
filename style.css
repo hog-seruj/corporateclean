@@ -1,4 +1,4 @@
-body { font: 0.8em/165% "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; margin:0; padding:0; color: #7a7a7a; outline:0 none; vertical-align:baseline; background:#1a1a1a; }
+body { font: 0.8em/165% "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; margin:0; padding:0; color: #7a7a7a; outline:0 none; vertical-align:baseline; background:#1a1a1a; min-width:960px; }
 
 h1, h2, h3, h4, h5, h6 { margin:25px 0 20px 0; line-height:120%; text-shadow: 1px 1px 1px #EAF1EA; color:#1487d4; font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; }
 
