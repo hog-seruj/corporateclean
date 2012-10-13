@@ -60,6 +60,7 @@ if (theme_get_setting('slideshow_js','corporateclean')):
 	//Initialize slideshow using theme settings
 	$effect=theme_get_setting('slideshow_effect','corporateclean');
 	$effect_time=theme_get_setting('slideshow_effect_time','corporateclean')*1000;
+	$slideshow_randomize=theme_get_setting('slideshow_randomize','corporateclean');
 	
 	//Defined the initial height (300) of slideshow and then the slideshow inherits the height of each slider item dynamically
 	drupal_add_js('jQuery(document).ready(function($) {  
@@ -68,6 +69,7 @@ if (theme_get_setting('slideshow_js','corporateclean')):
 		fx:    "'.$effect.'",
 		speed:  "slow",
 		timeout: "'.$effect_time.'",
+		random: '.$slideshow_randomize.',
 		pager:  "#slider-navigation",
 		pagerAnchorBuilder: function(idx, slide) {
 			return "#slider-navigation li:eq(" + (idx) + ") a";

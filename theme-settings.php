@@ -93,4 +93,10 @@ function corporateclean_form_system_theme_settings_alter(&$form, &$form_state) {
 	'#default_value' => theme_get_setting('slideshow_effect_time','corporateclean'),
   );
   
+  $form['mtt_settings']['slideshow']['slideshow_randomize'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Randomize slideshow order'),
+	'#default_value' => theme_get_setting('slideshow_randomize','corporateclean'),
+  );
+  
 }
