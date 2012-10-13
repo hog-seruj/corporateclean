@@ -37,7 +37,7 @@ blockquote { background:transparent url('images/blockquote.png') no-repeat top l
 
 .submitted { margin:-15px 0 20px 0; font-size: 85%; text-transform: uppercase; }
 
-.region-sidebar-first .block h2 {  margin: 0 0 15px 0; padding:0 0 5px 0; }
+.region-sidebar-first .block h2, .region-sidebar-second .block h2  {  margin: 0 0 15px 0; padding:0 0 5px 0; }
 
 .region-content { line-height:155%; } 
 
@@ -70,13 +70,23 @@ blockquote { background:transparent url('images/blockquote.png') no-repeat top l
 
 #content-inside { width: 960px; margin: 0 auto; padding:30px 0 60px; overflow:hidden; display:block; } 
 
-#main { float:left; width: 620px; padding:0 60px 0 0; margin:0; }
+#main { float:left; margin:0; }
 
-#sidebar { float:left; width: 280px; padding:0; } 
+#sidebar-first, #sidebar-second  { float:left; width: 280px; padding:0; }
+
+.one-sidebar.sidebar-first #main { width: 620px; padding:0 0 0 60px; }
+
+.one-sidebar.sidebar-second #main { width: 620px; padding:0 60px 0 0; }
+
+.two-sidebars #main { width: 340px; padding:0 30px; }
 
 .no-sidebars #main { width:960px; padding:0; margin:0; }
 
-.no-sidebars #sidebar { display:none; }
+.one-sidebar.sidebar-first #sidebar-second, .one-sidebar.sidebar-second #sidebar-first,
+.no-sidebars #sidebar-first, .no-sidebars #sidebar-second { display:none; }
+
+img { max-width: 100%; height: auto; 
+-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 .meta-data { font-size:75%; text-transform:uppercase; color:#545454; margin:5px 0 20px 0; display:block; overflow:hidden; clear:both; }
 
@@ -105,21 +115,21 @@ blockquote { background:transparent url('images/blockquote.png') no-repeat top l
 /*
 * Sidebar Blocks - Menus
 */
-.region-sidebar-first .block .content { border:1px solid #ffffff; 
+.region-sidebar-first .block .content, .region-sidebar-second .block .content  { border:1px solid #ffffff; 
 -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; 
 padding: 20px; overflow:hidden; margin:0 0 40px 0;
  /* shadow */
 -webkit-box-shadow: 0 2px 6px #efefef inset;  -moz-box-shadow:0 2px 6px #efefef inset;  box-shadow:0 2px 6px #efefef inset; }
 
-.region-sidebar-first #block-block-2.block .content { background:none; border:none; padding:0; -webkit-box-shadow: none;  -moz-box-shadow:none;  box-shadow:none; }
+.region-sidebar-first #block-block-2.block .content, .region-sidebar-second #block-block-2.block .content { background:none; border:none; padding:0; -webkit-box-shadow: none;  -moz-box-shadow:none;  box-shadow:none; }
 
-.region-sidebar-first ul.menu {  margin:0; padding:0; }
+.region-sidebar-first ul.menu, .region-sidebar-second ul.menu {  margin:0; padding:0; }
 
-.region-sidebar-first ul.menu li { list-style:none; margin:0; padding:0; list-style-image:none; }
+.region-sidebar-first ul.menu li, .region-sidebar-second ul.menu li { list-style:none; margin:0; padding:0; list-style-image:none; }
 
-.region-sidebar-first ul.menu li a { border-bottom:1px solid #e7e7e7; display:block; padding:5px; }
+.region-sidebar-first ul.menu li a, .region-sidebar-second ul.menu li a { border-bottom:1px solid #e7e7e7; display:block; padding:5px; }
 
-.region-sidebar-first ul.menu ul.menu { padding:0 0 0 15px; }
+.region-sidebar-first ul.menu ul.menu, .region-sidebar-second ul.menu ul.menu { padding:0 0 0 15px; }
 
 /* 
 * Contact 
@@ -342,11 +352,11 @@ font-family: "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans
 
 #block-search-form input.form-submit { background:none; border:none; outline:none; padding:6px 10px 0 10px; }
 
-.region-sidebar-first #block-search-form { -webkit-box-shadow: none;  -moz-box-shadow: none;  box-shadow: none; }
+.region-sidebar-first #block-search-form, .region-sidebar-second #block-search-form { -webkit-box-shadow: none;  -moz-box-shadow: none;  box-shadow: none; }
 
-.region-sidebar-first #block-search-form.block  { background:none; }
+.region-sidebar-first #block-search-form.block, .region-sidebar-second #block-search-form.block  { background:none; }
 
-.region-sidebar-first #block-search-form.block .content  { background:#ffffff; border:1px solid #FFFFFF; overflow:hidden; padding:0; }
+.region-sidebar-first #block-search-form.block .content, .region-sidebar-second #block-search-form.block .content { background:#ffffff; border:1px solid #FFFFFF; overflow:hidden; padding:0; }
 
 /* 
 * Messages
