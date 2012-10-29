@@ -404,17 +404,19 @@ div.messages.status a, div.messages.error a, div.messages.warning a { color:#fff
 /*  
 * Tables
 */
-table { border-collapse: collapse; width:100%; }
+table { border-spacing:0; border:0; width:100%;  }
 
-table, td { border: 1px solid #bbbbbb; }
+table td, table th { border:1px solid #bbbbbb; }
 
-table th { background:#222222; color:#ffffff; font-weight:bold; border:none; }
+table th { background:#222222; color:#ffffff; font-weight:bold; }
 
 table tr.odd { background:transparent; }
 
 table tr.even { background:#ffffff; }
 
 table td, table th { padding:5px; }
+/* Remove table borders */
+table.noborder td, table.noborder th, table.noborder tr { border:none; }
 
 /* 
 * Lists 
