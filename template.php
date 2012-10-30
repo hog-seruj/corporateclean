@@ -77,12 +77,12 @@ if (theme_get_setting('slideshow_js','corporateclean')):
 		height: 300,
 		after: onAfter
 	});
-	
+
 	function onAfter(curr, next, opts, fwd){
 		var $ht = $(this).height();
 		$(this).parent().animate({height: $ht});
 	}
-	
+
 	});',
 	array('type' => 'inline', 'scope' => 'header', 'weight' => 5)
 	);
