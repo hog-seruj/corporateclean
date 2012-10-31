@@ -99,7 +99,8 @@ background-image: linear-gradient(top, #262626 0%, #1a1a1a 100%);
 /* IE6-9 */ 
 filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#262626', endColorstr='#1a1a1a'); }
 
-.links ul li a, a.more, #edit-submit, #edit-preview, input.form-submit, #comments ul.links li a { color:#fefefe; text-shadow: 0 1px 1px #003547; 
+.links ul li a, a.more, #comments ul.links li a,
+input[type="submit"], input[type="reset"], input[type="button"] { color:#fefefe; text-shadow: 0 1px 1px #003547; 
 /* background */
 background: #0093c5;
 /* IE10 */ 
@@ -119,6 +120,7 @@ filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0093c5', end
 /* shadow */
 -webkit-box-shadow: 0px 1px 2px #939da2; -moz-box-shadow: 0px 1px 2px #939da2; box-shadow: 0px 1px 2px #939da2; }
 
-.links ul li a:hover, a.more:hover, #edit-submit:hover, #edit-preview:hover, input.form-submit:hover, #comments ul.links li a:hover { background: #008ab8; }
+.links ul li a:hover, a.more:hover, #comments ul.links li a:hover,
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover { background: #008ab8; }
 
 .region-sidebar-first .block .content, .region-sidebar-second .block .content { background:#fdfdfd; }
