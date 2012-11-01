@@ -55,36 +55,58 @@ function corporateclean_form_alter(&$form, &$form_state, $form_id) {
  */
 if (theme_get_setting('slideshow_js','corporateclean')):
 
-	drupal_add_js(drupal_get_path('theme', 'corporateclean') . '/js/jquery.cycle.all.min.js');
+	drupal_add_js(drupal_get_path('theme', 'corporateclean') . '/js/jquery.cycle.all.js');
 	
 	//Initialize slideshow using theme settings
 	$effect=theme_get_setting('slideshow_effect','corporateclean');
 	$effect_time=theme_get_setting('slideshow_effect_time','corporateclean')*1000;
 	$slideshow_randomize=theme_get_setting('slideshow_randomize','corporateclean');
 	
-	//Defined the initial height (300) of slideshow and then the slideshow inherits the height of each slider item dynamically
-	drupal_add_js('jQuery(document).ready(function($) {  
+	drupal_add_js('jQuery(document).ready(function($) {
 	
-	$("#slideshow").cycle({
-		fx:    "'.$effect.'",
-		speed:  "slow",
-		timeout: "'.$effect_time.'",
-		random: '.$slideshow_randomize.',
-		pager:  "#slider-navigation",
-		pagerAnchorBuilder: function(idx, slide) {
-			return "#slider-navigation li:eq(" + (idx) + ") a";
-		},
-		height: 300,
-		after: onAfter
+	$(window).load(function() {
+	
+		$("#slideshow img").show();
+		$("#slideshow").fadeIn("slow");
+		$("#slider-controls-wrapper").fadeIn("slow");
+	
+		$("#slideshow").cycle({
+			fx:    "'.$effect.'",
+			speed:  "slow",
+			timeout: "'.$effect_time.'",
+			pager:  "#slider-navigation",
+			pagerAnchorBuilder: function(idx, slide) {
+				return "#slider-navigation li:eq(" + (idx) + ") a";
+			},
+			slideResize: true,
+			containerResize: false,
+			height: "auto",
+			fit: 1,
+			before: function(){
+				$(this).parent().find(".slider-item.current").removeClass("current");
+			},
+			after: onAfter
+		});
 	});
-
-	function onAfter(curr, next, opts, fwd){
+	
+	function onAfter(curr, next, opts, fwd) {
 		var $ht = $(this).height();
-		$(this).parent().animate({height: $ht});
+		$(this).parent().height($ht);
+		$(this).addClass("current");
 	}
-
+	
+	$(window).load(function() {
+		var $ht = $(".slider-item.current").height();
+		$("#slideshow").height($ht);
+	});
+	
+	$(window).resize(function() {
+		var $ht = $(".slider-item.current").height();
+		$("#slideshow").height($ht);
+	});
+	
 	});',
-	array('type' => 'inline', 'scope' => 'header', 'weight' => 5)
+	array('type' => 'inline', 'scope' => 'footer', 'weight' => 5)
 	);
 
 endif;

@@ -1,9 +1,9 @@
 <!-- #header -->
 <div id="header">
 	<!-- #header-inside -->
-    <div id="header-inside">
+    <div id="header-inside" class="container_12 clearfix">
     	<!-- #header-inside-left -->
-        <div id="header-inside-left">
+        <div id="header-inside-left" class="grid_8">
             
             <?php if ($logo): ?>
             <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
@@ -22,9 +22,11 @@
             
         </div><!-- EOF: #header-inside-left -->
         
-        <!-- #header-inside-right -->
-        <div id="header-inside-right">
-		<?php print render($page['search_area']); ?>    
+        <!-- #header-inside-right -->    
+        <div id="header-inside-right" class="grid_4">
+
+			<?php print render($page['search_area']); ?>
+
         </div><!-- EOF: #header-inside-right -->
     
     </div><!-- EOF: #header-inside -->
@@ -33,9 +35,10 @@
 
 <!-- #header-menu -->
 <div id="header-menu">
-
-    <!-- #header-menu-inside -->
-    <div id="header-menu-inside">
+	<!-- #header-menu-inside -->
+    <div id="header-menu-inside" class="container_12 clearfix">
+    
+        <div class="grid_12">
         <?php 
         if (module_exists('i18n_menu')) {
         $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
@@ -44,6 +47,8 @@
         }
         print drupal_render($main_menu_tree);
         ?>
+        </div>
+        
     </div><!-- EOF: #header-menu-inside -->
 
 </div><!-- EOF: #header-menu -->
@@ -62,11 +67,12 @@
     
         <!--slider-item-->
         <div class="slider-item">
-            <div class="content">
+            <div class="content container_12">
+            	<div class="grid_12">
                 
                 <!--slider-item content-->
                 <div style="float:left; padding:0 30px 0 0;">
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-1.jpg"/>
+                <img class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-1.jpg"/>
                 </div>
                 <h2>Sample product name</h2>
                 <strong>General</strong><br/>
@@ -76,17 +82,19 @@
                 <div style="display:block; padding:30px 0 10px 0;"><a class="more" href="#">Tell me more</a></div>
                 <!--EOF:slider-item content-->
                 
+                </div>
             </div>
         </div>
         <!--EOF:slider-item-->
         
         <!--slider-item-->
         <div class="slider-item">
-            <div class="content">
-            
+            <div class="content container_12">
+            	<div class="grid_12">
+                
                 <!--slider-item content-->
                 <div style="float:right; padding:0 0 0 30px;">
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-2.jpg"/>
+                <img class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-2.jpg"/>
                 </div>
                 <h2>Sample service name</h2>
                 <strong>General</strong><br/>
@@ -95,15 +103,17 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 <div style="display:block; padding:30px 0 10px 0;"><a class="more" href="#">Tell me more</a></div>
                 <!--EOF:slider-item content-->
-            
+                
+				</div>
             </div>
         </div>
         <!--EOF:slider-item-->
         
         <!--slider-item-->
         <div class="slider-item">
-            <div class="content">
-            
+            <div class="content container_12">
+            	<div class="grid_12">
+                
                 <!--slider-item content-->
                 <h2>Sample product name</h2>
                 <strong>General</strong><br/>
@@ -112,29 +122,31 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
                 <div style="display:block; padding:30px 0 10px 0;"><a class="more" href="#">Tell me more</a></div>
                 <!--EOF:slider-item content-->
-            
+                
+				</div>
             </div>
         </div>
         <!--EOF:slider-item-->
         
         <!--slider-item-->
         <div class="slider-item">
-            <div class="content">
+            <div class="content container_12">
+            	<div class="grid_12">
                 
                 <!--slider-item content-->
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-3.jpg"/>
+                <img class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-3.jpg"/>
                 <!--EOF:slider-item content-->
-            
+				</div>
             </div>
         </div>
         <!--EOF:slider-item-->
     
     </div>
-    <!--EOF:slideshow-->
+    <!-- EOF: #slideshow -->
     
-    <!--slider-controls-wrapper-->
+    <!-- #slider-controls-wrapper -->
     <div id="slider-controls-wrapper">
-        <div id="slider-controls">
+        <div id="slider-controls" class="container_12">
             <ul id="slider-navigation">
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
@@ -143,7 +155,7 @@
             </ul>
         </div>
     </div>
-    <!--EOF:slider-controls-wrapper-->
+    <!-- EOF: #slider-controls-wrapper -->
     
     <?php endif; ?>
     
@@ -155,17 +167,22 @@
 <!-- #content -->
 <div id="content">
 	<!-- #content-inside -->
-    <div id="content-inside">
+    <div id="content-inside" class="container_12 clearfix">
     
-    	<?php if ($page['sidebar_first']) :?>
+        <?php if ($page['sidebar_first']) :?>
         <!-- #sidebar-first -->
-        <div id="sidebar-first">
+        <div id="sidebar-first" class="grid_4">
         	<?php print render($page['sidebar_first']); ?>
         </div><!-- EOF: #sidebar-first -->
-        <?php endif; ?>  
-    
-        <!-- #main -->
-        <div id="main">
+        <?php endif; ?>
+        
+        <?php if ($page['sidebar_first'] && $page['sidebar_second']) { ?>
+        <div class="grid_4">
+        <?php } elseif ($page['sidebar_first'] || $page['sidebar_second']) { ?>
+        <div id="main" class="grid_8">
+		<?php } else { ?>
+        <div id="main" class="grid_12">    
+        <?php } ?>
             
             <?php if (theme_get_setting('breadcrumb_display','corporateclean')): print $breadcrumb; endif; ?>
             
@@ -203,9 +220,9 @@
             
         </div><!-- EOF: #main -->
         
-    	<?php if ($page['sidebar_second']) :?>
+        <?php if ($page['sidebar_second']) :?>
         <!-- #sidebar-second -->
-        <div id="sidebar-second">
+        <div id="sidebar-second" class="grid_4">
         	<?php print render($page['sidebar_second']); ?>
         </div><!-- EOF: #sidebar-second -->
         <?php endif; ?>  
@@ -217,17 +234,17 @@
 <!-- #footer -->    
 <div id="footer">
 	<!-- #footer-inside -->
-    <div id="footer-inside">
+    <div id="footer-inside" class="container_12 clearfix">
     
-        <div class="footer-area first">
+        <div class="footer-area grid_4">
         <?php print render($page['footer_first']); ?>
         </div><!-- EOF: .footer-area -->
         
-        <div class="footer-area second">
+        <div class="footer-area grid_4">
         <?php print render($page['footer_second']); ?>
         </div><!-- EOF: .footer-area -->
         
-        <div class="footer-area third">
+        <div class="footer-area grid_4">
         <?php print render($page['footer_third']); ?>
         </div><!-- EOF: .footer-area -->
        
@@ -237,18 +254,18 @@
 
 <!-- #footer-bottom -->    
 <div id="footer-bottom">
-	<!-- #footer-bottom-inside -->    
-    <div id="footer-bottom-inside">
-    	<!-- #footer-bottom-inside-left --> 
-    	<div id="footer-bottom-left">
+	<!-- #footer-bottom-inside --> 
+    <div id="footer-bottom-inside" class="container_12 clearfix">
+    	<!-- #footer-bottom-left --> 
+    	<div id="footer-bottom-left" class="grid_8">
         
             <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu', 'links', 'clearfix')))); ?>
             
             <?php print render($page['footer']); ?>
             
         </div>
-        <!-- #footer-bottom-inside-right -->
-        <div id="footer-bottom-right">
+    	<!-- #footer-bottom-right --> 
+        <div id="footer-bottom-right" class="grid_4">
         
         	<?php print render($page['footer_bottom_right']); ?>
         

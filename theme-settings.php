@@ -98,5 +98,5 @@ function corporateclean_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Randomize slideshow order'),
 	'#default_value' => theme_get_setting('slideshow_randomize','corporateclean'),
   );
-  
+ 
 }
