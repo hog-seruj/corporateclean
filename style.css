@@ -404,10 +404,6 @@ li { display:list-item; }
 
 .pager-current { font-weight:bold; color:#7c713f; }
 
-ul.tabs { clear:both; margin:20px; white-space: normal }
-
-ul.tabs li { padding:10px 0; line-height:130%; }
-
 .links { display: block; text-align:right; }
 
 .links li { list-style-type:none; }
@@ -495,3 +491,12 @@ ul.social-bookmarks li.delicious a { background:url('images/social-media-delicio
 .twtr-bd { display:block; overflow:hidden; }
 
 .twtr-widget .twtr-tweet { border-bottom: 1px solid #353535 !important; padding: 0 0 5px 0; margin: 0 0 5px 0;  }
+
+/**
+ * Local tasks
+ */
+ul.primary, ul.tabs { clear:both; margin:10px 0; white-space: normal }
+
+ul.primary li, ul.tabs li { padding:10px 0; line-height:130%; }
+
+ul.primary li a, ul.tabs li a { margin:0; padding: 4px 1em; display: inline-block; }
