@@ -15,6 +15,19 @@ function corporateclean_breadcrumb($variables){
   }
 }
 
+function corporateclean_page_alter($page) {
+	// <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	$viewport = array(
+		'#type' => 'html_tag',
+		'#tag' => 'meta',
+		'#attributes' => array(
+		'name' =>  'viewport',
+		'content' =>  'width=device-width, initial-scale=1'
+		)
+	);
+	drupal_add_html_head($viewport, 'viewport');
+}
+
 /**
  * Override or insert variables into the html template.
  */

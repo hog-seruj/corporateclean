@@ -55,12 +55,6 @@ blockquote { background:transparent url('images/blockquote.png') no-repeat top l
 
 #header-menu { clear:both; }
 
-#header-menu-inside { margin: 0 auto; line-height:46px;} 
-
-#header-inside-left { }
-
-#header-inside-right { }
-
 #logo { display:block; overflow:hidden; padding:0; margin:0; }
 
 #logo a{ padding:0; margin:0; display:block; overflow:hidden; }
@@ -114,7 +108,7 @@ padding: 20px; overflow:hidden; margin:0 0 40px 0;
  /* shadow */
 -webkit-box-shadow: 0 2px 6px #efefef inset;  -moz-box-shadow:0 2px 6px #efefef inset;  box-shadow:0 2px 6px #efefef inset; }
 
-.region-sidebar-first #block-block-2.block .content, .region-sidebar-second #block-block-2.block .content { background:none; border:none; padding:0; -webkit-box-shadow: none;  -moz-box-shadow:none;  box-shadow:none; }
+.region-sidebar-first #block-block-4.block .content, .region-sidebar-second #block-block-4.block .content { background:none; border:none; padding:0; -webkit-box-shadow: none;  -moz-box-shadow:none;  box-shadow:none; }
 
 .region-sidebar-first ul.menu, .region-sidebar-second ul.menu {  margin:0; padding:0; }
 
@@ -183,12 +177,16 @@ padding: 20px; overflow:hidden; background:#ffffff; margin:25px 0 0 0; font-styl
 * Main-menu 
 */
 /* 1st Level */
-#header-menu ul.menu  { display:block; padding:0; margin:0; position:relative; z-index:100; }
+#header-menu ul.menu { display:block; padding:0; margin:0; position:relative; z-index:100; }
 
 #header-menu ul.menu li { display:inline-block; float:left; vertical-align: middle; padding:0; margin:0; }
 
-#header-menu ul.menu li a { outline:none; text-decoration: none; margin:0 35px 0 0; font-size:14px; font-weight:normal; text-align:center; text-transform:uppercase; 
-font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; display:block; }
+#header-menu ul.menu li a { outline:none; text-decoration: none; margin:0 25px 0 0; padding:10px 5px; font-size:14px; font-weight:normal; 
+text-align:center; text-transform:uppercase; font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; display:block; }
+
+#header-menu ul.menu li.first a { padding-left:0; }
+
+#header-menu ul.menu li.last a { padding-right:0; }
 
 #header-menu ul.menu li a:hover, #header-menu ul.menu li a.active { color:#1487d4; }
 
@@ -196,7 +194,7 @@ font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica
 
 #header-menu ul.menu li.expanded { position: relative; }
 
-#header-menu ul.menu li.expanded a { background:transparent url('images/main-menu-expanded.png') no-repeat center right; padding:0 15px 0 0; }
+#header-menu ul.menu li.expanded a { background:transparent url('images/main-menu-expanded.png') no-repeat center right; padding:10px 15px 10px 10px; }
 
 /* 2nd Level */
 #header-menu ul.menu li.expanded ul.menu { width: 230px; z-index:100; padding:0; display: none; position: absolute; }
@@ -216,7 +214,37 @@ font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica
 /* 3rd, 4th, 5th, (...) level  */
 #header-menu ul.menu li.expanded ul ul { display: none; left: 230px; top:0; padding:0; }
 
-/* Footer menu */
+/* 
+* Superfish support
+*/
+#navigation .block-superfish ul.sf-menu { margin:0; padding:0; }
+
+#navigation .block-superfish ul.sf-menu li a { margin:0 25px 0 0; padding:10px; font-size:14px; font-weight:normal; 
+text-transform:uppercase; font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; }
+
+#navigation .block-superfish ul.sf-menu li a.menuparent { padding:10px 30px 10px 10px; }
+
+#navigation .block-superfish ul.sf-menu li.first a { padding-left:0; }
+
+#navigation .block-superfish ul.sf-menu li.last a { margin-right:0; }
+
+#navigation .block-superfish ul.sf-menu li li a, #navigation .block-superfish ul.sf-menu li li.first a, #navigation .block-superfish ul.sf-menu li li.last a { margin:0; padding:10px; font-size:12px; }
+
+#navigation .block-superfish ul.sf-menu li:hover ul, #navigation .block-superfish ul.sf-menu li.sfHover ul { top: 35px; }
+
+#navigation .block-superfish ul.sf-menu li:hover ul ul, #navigation .block-superfish ul.sf-menu li.sfHover ul ul { top: 0; }
+
+/* 
+* Superfish support: Reset background/border
+*/
+#navigation .block-superfish ul.sf-menu li, #navigation .block-superfish ul.sf-menu li a,
+#navigation .block-superfish ul.sf-menu li:hover,
+#navigation .block-superfish ul.sf-menu li a:focus, .block-superfish ul.sf-menu li a:hover, 
+#navigation .block-superfish ul.sf-menu li a:active { background:none; border:none; }
+
+/* 
+* Footer menu 
+*/
 #footer .block ul.menu { margin: 0; padding: 0; }
 
 #footer .block ul.menu ul.menu { margin: 0 0 0 15px; }
@@ -311,7 +339,7 @@ font-family: "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans
 /*
 * Search
 */
-#block-search-form { background:#e8e8e8; border:none; overflow:hidden;
+#block-search-form { background:#e8e8e8; border:none; overflow:hidden; margin:10px 0 0 0;
 /* Radius */
  -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
  /* shadow */
@@ -319,7 +347,7 @@ font-family: "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans
 
 #block-search-form .form-item { margin:0; padding:0; }
 
-#block-search-form input.form-text { background:none; border:none; outline:none; text-decoration: none; color:#9f9f9f; float:left; width:218px; padding:10px; margin:0;height:15px; line-height:15px; -webkit-box-shadow: none;  -moz-box-shadow:none;box-shadow:none; }
+#block-search-form input.form-text { background:none; border:none; outline:none; text-decoration: none; color:#9f9f9f; float:left; width:70%; padding:10px; margin:0;height:15px; line-height:15px; -webkit-box-shadow: none;  -moz-box-shadow:none;box-shadow:none; }
 
 #block-search-form input.form-submit { background:none; border:none; outline:none; padding:6px 10px 0 10px; float:right; }
 
