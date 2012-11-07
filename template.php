@@ -74,6 +74,8 @@ if (theme_get_setting('slideshow_js','corporateclean')):
 	$effect=theme_get_setting('slideshow_effect','corporateclean');
 	$effect_time=theme_get_setting('slideshow_effect_time','corporateclean')*1000;
 	$slideshow_randomize=theme_get_setting('slideshow_randomize','corporateclean');
+	$slideshow_wrap=theme_get_setting('slideshow_wrap','corporateclean');
+	$slideshow_pause=theme_get_setting('slideshow_pause','corporateclean');
 	
 	drupal_add_js('jQuery(document).ready(function($) {
 	
@@ -86,7 +88,9 @@ if (theme_get_setting('slideshow_js','corporateclean')):
 		$("#slideshow").cycle({
 			fx:    "'.$effect.'",
 			speed:  "slow",
-			timeout: "'.$effect_time.'",
+			random: '.$slideshow_randomize.',
+			nowrap: '.$slideshow_wrap.',
+			pause: '.$slideshow_pause.',
 			pager:  "#slider-navigation",
 			pagerAnchorBuilder: function(idx, slide) {
 				return "#slider-navigation li:eq(" + (idx) + ") a";
