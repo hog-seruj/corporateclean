@@ -9,6 +9,7 @@ stylesheets[all and (max-width: 760px)][] = css/mobile.css
 stylesheets[all][] = style.css
 stylesheets[all][] = color/colors.css
 
+regions[navigation] = Navigation
 regions[search_area] = Search area
 regions[highlighted] = Highlighted
 regions[content] = Content
@@ -30,5 +31,5 @@ settings[slideshow_js]= 1
 settings[slideshow_effect]='scrollHorz'
 settings[slideshow_effect_time]='10'
 settings[slideshow_randomize]='0'
-
-project = "corporateclean"
+settings[slideshow_wrap]='0'
+settings[slideshow_pause]='0'
