@@ -9,14 +9,40 @@
  */
 function corporateclean_breadcrumb($variables){
   $breadcrumb = $variables['breadcrumb'];
+  $breadcrumb_separator=theme_get_setting('breadcrumb_separator','corporateclean');
+  
+  $show_breadcrumb_home = theme_get_setting('breadcrumb_home');
+  if (!$show_breadcrumb_home) {
+  array_shift($breadcrumb);
+  }
+  
   if (!empty($breadcrumb)) {
     $breadcrumb[] = drupal_get_title();
-    return '<div class="breadcrumb">' . implode(' <span class="breadcrumb-separator">/</span> ', $breadcrumb) . '</div>';
+    return '<div class="breadcrumb">' . implode(' <span class="breadcrumb-separator">' . $breadcrumb_separator . '</span> ', $breadcrumb) . '</div>';
   }
 }
 
 function corporateclean_page_alter($page) {
-	// <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	if (!theme_get_setting('responsive_respond','corporateclean')):
+	$mobileoptimized = array(
+		'#type' => 'html_tag',
+		'#tag' => 'meta',
+		'#attributes' => array(
+		'name' =>  'MobileOptimized',
+		'content' =>  'width'
+		)
+	);
+
+	$handheldfriendly = array(
+		'#type' => 'html_tag',
+		'#tag' => 'meta',
+		'#attributes' => array(
+		'name' =>  'HandheldFriendly',
+		'content' =>  'true'
+		)
+	);
+
 	$viewport = array(
 		'#type' => 'html_tag',
 		'#tag' => 'meta',
@@ -25,17 +51,32 @@ function corporateclean_page_alter($page) {
 		'content' =>  'width=device-width, initial-scale=1'
 		)
 	);
+	
+	drupal_add_html_head($mobileoptimized, 'MobileOptimized');
+	drupal_add_html_head($handheldfriendly, 'HandheldFriendly');
 	drupal_add_html_head($viewport, 'viewport');
+	endif;
+	
+}
+
+function corporateclean_preprocess_html(&$variables) {
+
+	if (!theme_get_setting('responsive_respond','corporateclean')):
+	drupal_add_css(path_to_theme() . '/css/basic-layout.css', array('group' => CSS_THEME, 'browsers' => array('IE' => '(lte IE 8)&(!IEMobile)', '!IE' => FALSE), 'preprocess' => FALSE));
+	endif;
+	
+	drupal_add_css(path_to_theme() . '/css/ie.css', array('group' => CSS_THEME, 'browsers' => array('IE' => '(lte IE 8)&(!IEMobile)', '!IE' => FALSE), 'preprocess' => FALSE));
 }
 
 /**
  * Override or insert variables into the html template.
  */
 function corporateclean_process_html(&$vars) {
-  // Hook into color.module
-  if (module_exists('color')) {
-    _color_html_alter($vars);
-  }
+	// Hook into color.module
+	if (module_exists('color')) {
+	_color_html_alter($vars);
+	}
+
 }
 
 /**
