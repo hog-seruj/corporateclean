@@ -138,13 +138,13 @@ padding: 20px; overflow:hidden; margin:0 0 40px 0;
 */
 .about-features { padding:60px 0 0 0; }
 
-.about-feature {  }
-
 .about-feature.last {  }
 
 .about-members { clear:both; padding:10px 0 0 0;}
 
 .about-member { background:transparent url('images/pattern.png'); border:1px solid #e4e4e4; padding:15px; margin-bottom:15px; }
+
+.about-feature h2 { margin-top:0; }
 
 .about-member p { margin:0; }
 
