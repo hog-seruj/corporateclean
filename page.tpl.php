@@ -38,17 +38,19 @@
 	<!-- #header-menu-inside -->
     <div id="header-menu-inside" class="container_12 clearfix">
     
-        <div id="navigation" class="clearfix">
-        <?php if ($page['navigation']) :?>
-        <?php print drupal_render($page['navigation']); ?>
-        <?php else :
-        if (module_exists('i18n_menu')) {
-        $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
-        } else {
-        $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu')); 
-        }
-        print drupal_render($main_menu_tree);
-        endif; ?>
+    	<div class="grid_12">
+            <div id="navigation" class="clearfix">
+            <?php if ($page['navigation']) :?>
+            <?php print drupal_render($page['navigation']); ?>
+            <?php else :
+            if (module_exists('i18n_menu')) {
+            $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
+            } else {
+            $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu')); 
+            }
+            print drupal_render($main_menu_tree);
+            endif; ?>
+            </div>
         </div>
         
     </div><!-- EOF: #header-menu-inside -->
