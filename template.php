@@ -18,7 +18,7 @@ function corporateclean_breadcrumb($variables){
   
   if (!empty($breadcrumb)) {
     $breadcrumb[] = drupal_get_title();
-    return '<div class="breadcrumb">' . implode(' <span class="breadcrumb-separator">' . $breadcrumb_separator . '</span> ', $breadcrumb) . '</div>';
+    return '<div class="breadcrumb">' . implode(' <span class="breadcrumb-separator">' . $breadcrumb_separator . '</span>', $breadcrumb) . '</div>';
   }
 }
 
