@@ -24,7 +24,7 @@ function corporateclean_breadcrumb($variables){
 
 function corporateclean_page_alter($page) {
 
-	if (!theme_get_setting('responsive_respond','corporateclean')):
+	if (theme_get_setting('responsive_meta','corporateclean')):
 	$mobileoptimized = array(
 		'#type' => 'html_tag',
 		'#tag' => 'meta',
