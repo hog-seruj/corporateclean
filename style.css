@@ -114,15 +114,17 @@ padding: 20px; overflow:hidden; margin:0 0 40px 0;
 
 .region-sidebar-first ul.menu, .region-sidebar-second ul.menu {  margin:0; padding:0; }
 
-.region-sidebar-first ul.menu li, .region-sidebar-second ul.menu li { list-style:none; margin:0; padding:0; list-style-image:none; }
-
-.region-sidebar-first ul.menu li a, .region-sidebar-second ul.menu li a { border-bottom:1px solid #e7e7e7; display:block; padding:5px; }
+.region-sidebar-first ul.menu li, .region-sidebar-second ul.menu li { list-style:none; margin:0; padding:5px; border-bottom:1px solid #e7e7e7; display:block; }
 
 .region-sidebar-first ul.menu ul.menu, .region-sidebar-second ul.menu ul.menu { padding:0 0 0 15px; }
 
-.region-sidebar-first ul.menu li.collapsed, .region-sidebar-second ul.menu li.collapsed, #footer .block ul.menu li.collapsed { list-style-image: url(images/menu-collapsed.png); list-style-position:inside; }
+.region-sidebar-first ul.menu li.collapsed, .region-sidebar-second ul.menu li.collapsed, #footer .block ul.menu li.collapsed { background:url("images/menu-collapsed.png") no-repeat scroll left 10px transparent; }
 
-.region-sidebar-first ul.menu li.expanded, .region-sidebar-second ul.menu li.expanded, #footer .block ul.menu li.expanded { list-style-image: url(images/menu-expanded.png); list-style-position:inside; border-bottom: none; }
+.region-sidebar-first ul.menu li.expanded, .region-sidebar-second ul.menu li.expanded, #footer .block ul.menu li.expanded { background:url("images/menu-expanded.png") no-repeat scroll left 10px transparent; }
+
+.region-sidebar-first ul.menu li.collapsed > a, .region-sidebar-second ul.menu li.collapsed > a, #footer .block ul.menu li.collapsed > a { padding-left:15px; }
+
+.region-sidebar-first ul.menu li.expanded > a, .region-sidebar-second ul.menu li.expanded > a, #footer .block ul.menu li.expanded > a { padding-left:15px; }
 
 /* 
 * Contact 
