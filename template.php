@@ -129,6 +129,7 @@ if (theme_get_setting('slideshow_js','corporateclean')):
 		$("#slideshow").cycle({
 			fx:    "'.$effect.'",
 			speed:  "slow",
+			timeout: "'.$effect_time.'",
 			random: '.$slideshow_randomize.',
 			nowrap: '.$slideshow_wrap.',
 			pause: '.$slideshow_pause.',
