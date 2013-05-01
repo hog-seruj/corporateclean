@@ -18,6 +18,8 @@ h4 { font-size: 110%; }
 
 .subtitle { padding:5px 0 15px 0; font-size:18px; color:#494d4f; font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; }
 
+input, textarea, select { font-family: "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; }
+
 #footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6,
 #footer-bottom h1, #footer-bottom h2, #footer-bottom h3, #footer-bottom h4, #footer-bottom h5, #footer-bottom h6 { text-shadow:none; }
 
@@ -115,6 +117,8 @@ padding: 20px; overflow:hidden; margin:0 0 40px 0;
 .region-sidebar-first ul.menu, .region-sidebar-second ul.menu {  margin:0; padding:0; }
 
 .region-sidebar-first ul.menu li, .region-sidebar-second ul.menu li { list-style:none; margin:0; padding:5px; border-bottom:1px solid #e7e7e7; display:block; }
+
+.region-sidebar-first ul.menu li.expanded, .region-sidebar-second ul.menu li.expanded { border-bottom:none; }
 
 .region-sidebar-first ul.menu ul.menu, .region-sidebar-second ul.menu ul.menu { padding:0 0 0 15px; }
 
@@ -227,7 +231,7 @@ text-align:center; text-transform:uppercase; font-family: Myriad Pro,"Lucida Gra
 */
 #navigation .block-superfish ul.sf-menu { margin:0; padding:0; }
 
-#navigation .block-superfish ul.sf-menu li a { margin:0 25px 0 0; padding:10px; font-size:14px; font-weight:normal; 
+#navigation .block-superfish ul.sf-menu li a { margin:0 25px 0 0; padding:10px; font-size:14px; font-weight:normal; text-align:left;
 text-transform:uppercase; font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; }
 
 #navigation .block-superfish ul.sf-menu li a.menuparent { padding:10px 30px 10px 10px; }
@@ -241,6 +245,8 @@ text-transform:uppercase; font-family: Myriad Pro,"Lucida Grande","Lucida Sans U
 #navigation .block-superfish ul.sf-menu li:hover ul, #navigation .block-superfish ul.sf-menu li.sfHover ul { top: 35px; }
 
 #navigation .block-superfish ul.sf-menu li:hover ul ul, #navigation .block-superfish ul.sf-menu li.sfHover ul ul { top: 0; }
+
+#navigation .block-superfish select { width:100%; margin:10px 0; padding:5px; }
 
 /* 
 * Superfish support: Reset background/border
