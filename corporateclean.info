@@ -37,3 +37,4 @@ settings[slideshow_wrap]= 0
 settings[slideshow_pause]= 0
 settings[responsive_meta]= 1
 settings[responsive_respond]= 0
+settings[credits_display]= 1
