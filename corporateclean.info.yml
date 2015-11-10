@@ -1,0 +1,48 @@
+name: CorporateClean
+type: theme
+description: 'A flexible, recolorable theme with many regions supported by <a href="http://www.morethanthemes.com/" target="_blank">More Than (just) Themes</a>. If you like this theme, we encourage you to try also our other <a href="http://www.morethanthemes.com" target="_blank">Premium</a> and <a href="http://drupalizing.com" target="_blank">Free</a> Drupal themes.'
+version: VERSION
+core: 8.x
+
+stylesheets:
+  all:
+    - style.css
+    - color/colors.css
+
+regions:
+  navigation: Navigation
+  search_area: Search area
+  highlighted: Highlighted
+  content: Content
+  sidebar_first: First sidebar
+  sidebar_second: Second sidebar
+  banner: Banner
+  footer_first: Footer first
+  footer_second: Footer second
+  footer_third: Footer third
+  footer: Footer
+  footer_bottom_right: Footer bottom right
+  help: Help
+  page_top: Page top
+  page_bottom: Page bottom
+
+settings:
+  breadcrumb_display: 1
+  breadcrumb_home: 1
+  breadcrumb_separator: '/'
+  slideshow_display: 1
+  slideshow_js: 1
+  slideshow_effect: 'scrollHorz'
+  slideshow_effect_time: '10'
+  slideshow_randomize: 0
+  slideshow_wrap: 0
+  slideshow_pause: 0
+  responsive_meta: 1
+  responsive_respond: 0
+  credits_display: 1
+
+stylesheets[all and (min-width: 980px)][] = css/960.css
+stylesheets[all and (min-width: 760px) and (max-width: 980px)][] = css/720.css
+stylesheets[all and (max-width: 760px)][] = css/mobile.css
+
+
