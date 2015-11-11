@@ -35,6 +35,7 @@
  * Regions:
  * - page.navigation: Navigation
  * - page.search_area: Search area
+ * - page.header: Header region
  * - page.highlighted: Highlighted
  * - page.content: Content
  * - page.sidebar_first: First sidebar
@@ -61,22 +62,7 @@
   <div id="header-inside" class="container_12 clearfix">
   	<!-- #header-inside-left -->
     <div id="header-inside-left" class="grid_8">
-
-     {% if logo %}
-        <a href="<?php print check_url($front_page); ?>" title="{{ 'Home'|t}}"><img src="{{ logo }}" alt="{{ 'Home'|t}}" /></a>
-      {% endif %}
-
-      {% if site_name || site_slogan %}
-      <div class="clearfix">
-      {% if site_name %}
-      <span id="site-name"><a href="{{ front_page }}" title="{{ 'Home'|t}}">{{ site_name }}</a></span>
-      {% endif %}
-      {% if site_slogan %}
-      <span id="slogan">{{ print $site_slogan }}</span>
-      {% endif %}
-      </div>
-      {% endif %}
-
+      {{ page.header }}
     </div><!-- EOF: #header-inside-left -->
 
     <!-- #header-inside-right -->
@@ -95,14 +81,7 @@
 
   	<div class="grid_12">
       <div id="navigation" class="clearfix">
-        {% if page.navigation %}
-          {{ page.navigation }}
-        {% elseif module_exists('i18n_menu') %}
-          $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
-        {% else %}
-          $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-          print drupal_render($main_menu_tree);
-        {% endif %}
+        {{ page.navigation }}
       </div>
     </div>
 

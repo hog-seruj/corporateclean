@@ -12,6 +12,7 @@ stylesheets:
 regions:
   navigation: Navigation
   search_area: Search area
+  header: Header
   highlighted: Highlighted
   content: Content
   sidebar_first: First sidebar
