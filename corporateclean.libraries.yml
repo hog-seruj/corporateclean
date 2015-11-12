@@ -2,5 +2,12 @@ global-styling:
   version: VERSION
   css:
     theme:
-      style.css: {}
-      css/colors.css: {}
+      css/basic-layout.css: {}
+      css/ie.css: {}
+      css/style.css: {}
+      color/colors.css: {}
+  js:
+    js/jquery.cycle.all.js: {}
+  dependencies:
+    - core/jquery
+

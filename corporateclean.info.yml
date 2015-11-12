@@ -6,9 +6,9 @@ core: 8.x
 libraries:
   - corporateclean/global-styling
 regions:
-  navigation: Navigation
-  search_area: Search area
   header: Header
+  search_area: Search area
+  navigation: Navigation
   highlighted: Highlighted
   content: Content
   sidebar_first: First sidebar
