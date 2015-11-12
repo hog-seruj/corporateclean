@@ -3,12 +3,8 @@ type: theme
 description: 'A flexible, recolorable theme with many regions supported by <a href="http://www.morethanthemes.com/" target="_blank">More Than (just) Themes</a>. If you like this theme, we encourage you to try also our other <a href="http://www.morethanthemes.com" target="_blank">Premium</a> and <a href="http://drupalizing.com" target="_blank">Free</a> Drupal themes.'
 version: VERSION
 core: 8.x
-
-stylesheets:
-  all:
-    - style.css
-    - color/colors.css
-
+libraries:
+  - corporateclean/global-styling
 regions:
   navigation: Navigation
   search_area: Search area
