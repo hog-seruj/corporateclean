@@ -1,24 +1,53 @@
 <?php
+
 /**
- * Return a themed breadcrumb trail.
- *
- * @param $breadcrumb
- *   An array containing the breadcrumb links.
- * @return
- *   A string containing the breadcrumb output.
+ * @file
+ * Functions to support theming in Adaptivetheme sub-themes.
  */
-function corporateclean_breadcrumb($variables){
-  $breadcrumb = $variables['breadcrumb'];
-  $breadcrumb_separator=theme_get_setting('breadcrumb_separator','corporateclean');
 
-  $show_breadcrumb_home = theme_get_setting('breadcrumb_home');
-  if (!$show_breadcrumb_home) {
-  array_shift($breadcrumb);
-  }
+use Drupal\Core\Url;
+use Drupal\at_core\Layout\LayoutLoad;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\Tags;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\Language;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Theme\ThemeSettings;
+use Symfony\Component\Yaml\Parser;
 
-  if (!empty($breadcrumb)) {
-    $breadcrumb[] = drupal_get_title();
-    return '<div class="breadcrumb">' . implode(' <span class="breadcrumb-separator">' . $breadcrumb_separator . '</span>', $breadcrumb) . '</div>';
+/**
+ * Alter attachments (typically assets) to a page before it is rendered.
+ *
+ * Use this hook when you want to remove or alter attachments on the page, or
+ * add attachments to the page that depend on another module's attachments (this
+ * hook runs after hook_page_attachments().
+ *
+ * @param array &$page
+ *   An empty renderable array representing the page.
+ *
+ * @see hook_page_attachments_alter()
+ */
+function corporateclean_preprocess_breadcrumb(&$variables){
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $breadcrumbs = theme_get_setting('breadcrumb_display', $theme);
+  $breadcrumbs_home = theme_get_setting('breadcrumb_home', $theme);
+
+  // This variable used in breadcrumb.html.twig
+  $variables['breadcrumb_separator'] = theme_get_setting('breadcrumb_separator', $theme);
+
+  if(isset($breadcrumbs) && $breadcrumbs === 1) {
+    // Show or hide the Home link.
+    $first_item = array_values($variables['breadcrumb'])[0];
+    if (isset($first_item['url']) && $first_item['url'] == base_path()) {
+      if (isset($breadcrumbs_home) && $breadcrumbs_home === 1) {
+        $variables['breadcrumb'];
+      } else {
+        array_shift($variables['breadcrumb']);
+      }
+    }
+  } else {
+    $variables['breadcrumb'] = '';
   }
 }
 
@@ -45,14 +74,15 @@ function corporateclean_process_page(&$variables) {
 }
 
 function corporateclean_form_alter(&$form, &$form_state, $form_id) {
-  dsm($theme_path);
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+
   if ($form_id == 'search_block_form') {
     unset($form['search_block_form']['#title']);
 
     $form['search_block_form']['#title_display'] = 'invisible';
 		$form_default = t('Search');
     $form['search_block_form']['#default_value'] = $form_default;
-    $form['actions']['submit'] = array('#type' => 'image_button', '#src' => $theme_path . '/images/search-button.png');
+    $form['actions']['submit'] = array('#type' => 'image_button', '#src' => 'themes/' . $theme . '/images/search-button.png');
 
  	$form['search_block_form']['#attributes'] = array('onblur' => "if (this.value == '') {this.value = '{$form_default}';}", 'onfocus' => "if (this.value == '{$form_default}') {this.value = '';}" );
   }

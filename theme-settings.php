@@ -1,74 +1,84 @@
 <?php
+
 /**
- * Implements hook_form_FORM_ID_alter().
+ * @file
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+// Set theme name to use in the key values.
+$theme_name = \Drupal::theme()->getActiveTheme()->getName();
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
  *
- * @param $form
- *   The form.
- * @param $form_state
- *   The form state.
+ * Form override for theme settings.
  */
 function corporateclean_form_system_theme_settings_alter(&$form, &$form_state) {
+
+  // Get the theme name we are editing
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
 
   $form['mtt_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Corporate Clean Theme Settings'),
     '#collapsible' => FALSE,
-	'#collapsed' => FALSE,
+    '#collapsed' => FALSE,
   );
 
   $form['mtt_settings']['breadcrumb'] = array(
     '#type' => 'fieldset',
     '#title' => t('Breadcrumb'),
     '#collapsible' => TRUE,
-	'#collapsed' => FALSE,
+    '#collapsed' => FALSE,
   );
-  
+
   $form['mtt_settings']['breadcrumb']['breadcrumb_display'] = array(
     '#type' => 'checkbox',
     '#title' => t('Show breadcrumb'),
   	'#description'   => t('Use the checkbox to enable or disable breadcrumb.'),
-	'#default_value' => theme_get_setting('breadcrumb_display','corporateclean'),
+	'#default_value' => theme_get_setting('breadcrumb_display', $theme),
   );
-  
+
   $form['mtt_settings']['breadcrumb']['breadcrumb_separator'] = array(
     '#type' => 'textfield',
     '#title' => t('Breadcrumb separator'),
-	'#default_value' => theme_get_setting('breadcrumb_separator','corporateclean'),
+	'#default_value' => theme_get_setting('breadcrumb_separator', $theme),
     '#size'          => 5,
     '#maxlength'     => 10,
   );
-  
+
   $form['mtt_settings']['breadcrumb']['breadcrumb_home'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Show home page link in breadcrumb'),
   	'#description'   => t('Use the checkbox to enable or disable the home page link in breadcrumb.'),
-    '#default_value' => theme_get_setting('breadcrumb_home'),
+    '#default_value' => theme_get_setting('breadcrumb_home', $theme),
   );
-  
+
   $form['mtt_settings']['slideshow'] = array(
     '#type' => 'fieldset',
     '#title' => t('Front Page Slideshow'),
     '#collapsible' => TRUE,
-	'#collapsed' => FALSE,
+    '#collapsed' => FALSE,
   );
-  
+
   $form['mtt_settings']['slideshow']['slideshow_display'] = array(
     '#type' => 'checkbox',
     '#title' => t('Show slideshow'),
-	'#default_value' => theme_get_setting('slideshow_display','corporateclean'),
+    '#default_value' => theme_get_setting('slideshow_display', $theme),
   );
-  
+
   $form['mtt_settings']['slideshow']['slideshow_js'] = array(
     '#type' => 'checkbox',
     '#title' => t('Include slideshow javascript code'),
-	'#default_value' => theme_get_setting('slideshow_js','corporateclean'),
+    '#default_value' => theme_get_setting('slideshow_js', $theme),
   );
-  
+
   $form['mtt_settings']['slideshow']['slideshow_effect'] = array(
     '#type' => 'select',
     '#title' => t('Effects'),
   	'#description'   => t('From the drop-down menu, select the slideshow effect you prefer.'),
-	'#default_value' => theme_get_setting('slideshow_effect','corporateclean'),
+	'#default_value' => theme_get_setting('slideshow_effect', $theme),
     '#options' => array(
 		'blindX' => t('blindX'),
 		'blindY' => t('blindY'),
@@ -99,70 +109,70 @@ function corporateclean_form_system_theme_settings_alter(&$form, &$form_state) {
 		'zoom' => t('zoom'),
     ),
   );
-  
+
   $form['mtt_settings']['slideshow']['slideshow_effect_time'] = array(
     '#type' => 'textfield',
     '#title' => t('Effect duration (sec)'),
-	'#default_value' => theme_get_setting('slideshow_effect_time','corporateclean'),
+    '#default_value' => theme_get_setting('slideshow_effect_time', $theme),
   );
-  
+
   $form['mtt_settings']['slideshow']['slideshow_randomize'] = array(
     '#type' => 'checkbox',
     '#title' => t('Randomize slideshow order'),
-	'#default_value' => theme_get_setting('slideshow_randomize','corporateclean'),
+    '#default_value' => theme_get_setting('slideshow_randomize', $theme),
   );
-  
+
   $form['mtt_settings']['slideshow']['slideshow_wrap'] = array(
     '#type' => 'checkbox',
     '#title' => t('Prevent slideshow from wrapping'),
-	'#default_value' => theme_get_setting('slideshow_wrap','corporateclean'),
+    '#default_value' => theme_get_setting('slideshow_wrap', $theme),
   );
-  
+
   $form['mtt_settings']['slideshow']['slideshow_pause'] = array(
     '#type' => 'checkbox',
     '#title' => t('Pause slideshow on hover'),
-	'#default_value' => theme_get_setting('slideshow_pause','corporateclean'),
+    '#default_value' => theme_get_setting('slideshow_pause', $theme),
   );
-  
+
   $form['mtt_settings']['support'] = array(
     '#type' => 'fieldset',
     '#title' => t('Accessibility and support settings'),
     '#collapsible' => TRUE,
-	'#collapsed' => FALSE,
+    '#collapsed' => FALSE,
   );
-  
+
   $form['mtt_settings']['support']['responsive'] = array(
     '#type' => 'fieldset',
     '#title' => t('Responsive'),
     '#collapsible' => TRUE,
-	'#collapsed' => FALSE,
+    '#collapsed' => FALSE,
   );
-  
+
   $form['mtt_settings']['support']['responsive']['responsive_meta'] = array(
     '#type' => 'checkbox',
     '#title' => t('Add meta tags to support responsive design on mobile devices.'),
-	'#default_value' => theme_get_setting('responsive_meta','corporateclean'),
+    '#default_value' => theme_get_setting('responsive_meta', $theme),
   );
-  
+
   $form['mtt_settings']['support']['responsive']['responsive_respond'] = array(
     '#type' => 'checkbox',
     '#title' => t('Add Respond.js JavaScript to add basic CSS3 media query support to IE 6-8.'),
-	'#default_value' => theme_get_setting('responsive_respond','corporateclean'),
+    '#default_value' => theme_get_setting('responsive_respond', $theme),
     '#description'   => t('IE 6-8 require a JavaScript polyfill solution to add basic support of CSS3 media queries. Note that you should enable <strong>Aggregate and compress CSS files</strong> through <em>/admin/config/development/performance</em>.'),
   );
-    
+
   $form['mtt_settings']['credits'] = array(
     '#type' => 'fieldset',
     '#title' => t('Credits'),
     '#collapsible' => TRUE,
-	'#collapsed' => FALSE,
+    '#collapsed' => FALSE,
   );
-  
+
   $form['mtt_settings']['credits']['credits_display'] = array(
     '#type' => 'checkbox',
     '#title' => t('Show credits'),
   	'#description'   => t('Use the checkbox to enable or disable credits.'),
-	'#default_value' => theme_get_setting('credits_display','corporateclean'),
+    '#default_value' => theme_get_setting('credits_display', $theme),
   );
-  
+
 }
