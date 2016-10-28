@@ -54,22 +54,26 @@ function corporateclean_preprocess_breadcrumb(&$variables){
 /**
  * Override or insert variables into the html template.
  */
-function corporateclean_process_html(&$vars) {
-	// Hook into color.module
-	if (module_exists('color')) {
-	_color_html_alter($vars);
-	}
+function corporateclean_preprocess_html(&$variables) {
+  // Hook into color.module
+  // if (module_exists('color')) {
+  // _color_html_alter($vars);
+  // }
 
 }
 
 /**
  * Override or insert variables into the page template.
  */
-function corporateclean_process_page(&$variables) {
+function corporateclean_preprocess_page(&$variables) {
+  // Add page variable.
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $variables['slideshow_display'] = theme_get_setting('slideshow_display', $theme);
+
   // Hook into color.module.
-  if (module_exists('color')) {
-    _color_page_alter($variables);
-  }
+  // if (module_exists('color')) {
+  //   _color_page_alter($variables);
+  // }
 
 }
 
