@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Lists available colors and color schemes for the Corporateclean theme.
+ */
+
 $info = array(
   // Available colors and color labels used in theme.
   'fields' => array(

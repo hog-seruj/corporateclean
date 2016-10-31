@@ -55,11 +55,6 @@ function corporateclean_preprocess_breadcrumb(&$variables){
  * Override or insert variables into the html template.
  */
 function corporateclean_preprocess_html(&$variables) {
-  // Hook into color.module
-  // if (module_exists('color')) {
-  // _color_html_alter($vars);
-  // }
-
 }
 
 /**
@@ -70,11 +65,13 @@ function corporateclean_preprocess_page(&$variables) {
   $theme = \Drupal::theme()->getActiveTheme()->getName();
   $variables['slideshow_display'] = theme_get_setting('slideshow_display', $theme);
 
-  // Hook into color.module.
-  // if (module_exists('color')) {
-  //   _color_page_alter($variables);
-  // }
-
+  // Slider settings.
+  $slider_settings = &$variables['#attached']['drupalSettings']['slider'];
+  $slider_settings['effect'] = theme_get_setting('slideshow_effect', $theme);
+  $slider_settings['effectTime'] = (int) theme_get_setting('slideshow_effect_time', $theme)*1000;
+  $slider_settings['slideshowRandomize'] = theme_get_setting('slideshow_randomize', $theme);
+  $slider_settings['slideshowWrap'] = theme_get_setting('slideshow_wrap', $theme);
+  $slider_settings['slideshowPause'] = theme_get_setting('slideshow_pause', $theme);
 }
 
 function corporateclean_form_alter(&$form, &$form_state, $form_id) {
@@ -91,72 +88,5 @@ function corporateclean_form_alter(&$form, &$form_state, $form_id) {
  	$form['search_block_form']['#attributes'] = array('onblur' => "if (this.value == '') {this.value = '{$form_default}';}", 'onfocus' => "if (this.value == '{$form_default}') {this.value = '';}" );
   }
 }
-
-/**
- * Add javascript files for jquery slideshow.
- */
-/*if (theme_get_setting('slideshow_js','corporateclean')):
-
-	drupal_add_js(drupal_get_path('theme', 'corporateclean') . '/js/jquery.cycle.all.js');
-
-	//Initialize slideshow using theme settings
-	$effect=theme_get_setting('slideshow_effect','corporateclean');
-	$effect_time= (int) theme_get_setting('slideshow_effect_time','corporateclean')*1000;
-	$slideshow_randomize=theme_get_setting('slideshow_randomize','corporateclean');
-	$slideshow_wrap=theme_get_setting('slideshow_wrap','corporateclean');
-	$slideshow_pause=theme_get_setting('slideshow_pause','corporateclean');
-
-	drupal_add_js('jQuery(document).ready(function($) {
-
-	$(window).load(function() {
-
-		$("#slideshow img").show();
-		$("#slideshow").fadeIn("slow");
-		$("#slider-controls-wrapper").fadeIn("slow");
-
-		$("#slideshow").cycle({
-			fx:    "'.$effect.'",
-			speed:  "slow",
-			timeout: "'.$effect_time.'",
-			random: '.$slideshow_randomize.',
-			nowrap: '.$slideshow_wrap.',
-			pause: '.$slideshow_pause.',
-			pager:  "#slider-navigation",
-			pagerAnchorBuilder: function(idx, slide) {
-				return "#slider-navigation li:eq(" + (idx) + ") a";
-			},
-			slideResize: true,
-			containerResize: false,
-			height: "auto",
-			fit: 1,
-			before: function(){
-				$(this).parent().find(".slider-item.current").removeClass("current");
-			},
-			after: onAfter
-		});
-	});
-
-	function onAfter(curr, next, opts, fwd) {
-		var $ht = $(this).height();
-		$(this).parent().height($ht);
-		$(this).addClass("current");
-	}
-
-	$(window).load(function() {
-		var $ht = $(".slider-item.current").height();
-		$("#slideshow").height($ht);
-	});
-
-	$(window).resize(function() {
-		var $ht = $(".slider-item.current").height();
-		$("#slideshow").height($ht);
-	});
-
-	});',
-	array('type' => 'inline', 'scope' => 'footer', 'weight' => 5)
-	);
-
-endif;
-*/
 
 ?>

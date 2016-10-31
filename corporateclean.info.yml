@@ -39,6 +39,35 @@ settings:
   responsive_respond: 0
   credits_display: 1
 
+# This section controls the libraries for your theme. For full documentation,
+# see https://www.drupal.org/node/2216195
+
+# The "libraries-override:" section will allow you to:
+# - Replace an entire library.
+# - Remove an entire library.
+# - Replace an asset in a library with another asset.
+# - Remove an asset from a library.
+libraries-override:
+  classy/base:
+    css:
+      component:
+        css/components/breadcrumb.css: false
+        css/components/button.css: false
+        css/components/more-link.css: false
+        css/components/pager.css: false
+        css/components/tabs.css: false
+        css/components/dialog.css: false
+        css/components/ui-dialog.css: false
+
+# The "libraries-extend:" section will allow you to add your own JS or CSS to
+# existing libraries.
+# libraries-extend:
+
+# The "libraries:" section will add a library to _all_ pages.
+libraries:
+  - corporateclean/global-styling
+
+
 stylesheets[all and (min-width: 980px)][] = css/960.css
 stylesheets[all and (min-width: 760px) and (max-width: 980px)][] = css/720.css
 stylesheets[all and (max-width: 760px)][] = css/mobile.css
